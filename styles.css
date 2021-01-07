@@ -4,21 +4,22 @@
 }
 
 #menu {
-    background-color: #D84282;
     position: relative;
+    margin-top:20px;
     width: var(--menu-bar-width);
     height: var(--menu-bar-height);
-    margin: 100px;
 }
 
 #menu::before,
-#menu::after {
+#menu::after,
+#menu div{
     background-color: #D84282;
     display: block;
     content: "";
     width: var(--menu-bar-width);
     height: var(--menu-bar-height);
     position: absolute;
+    transition: all .2s ease-in-out;
 }
 
 #menu::before {
@@ -30,3 +31,24 @@
     left: 0;
     top: 20px;
 }
+
+.container{
+    margin:100px;
+    width:70px;
+    height: 60px;
+}
+
+.container:hover #menu:before {
+    transform: translateY(20px) rotate(45deg);
+}
+
+.container:hover #menu:after{
+    transform: translateY(-20px) rotate(-45deg);
+}
+
+.container:hover #menu div{
+    transform: scale(0);
+}
+
+
+
